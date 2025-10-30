@@ -1,14 +1,21 @@
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './App.css'
+import Home from "./routes/Home";
+import AppLayout from "./Layouts/AppLayout";
+import IncidentList from "./routes/IncidentList";
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />, // ✅ layout หลัก
+    children: [
+      { index: true, element: <Home /> },
+      { path: "incident", element: <IncidentList /> },
+    ],
+  },
+]);
 
-
-  return (
-    <>
-      <h1 className='text-red-600'> 2222</h1>
-    </>
-  )
+export default function App() {
+  return <RouterProvider router={router} />;
 }
-
-export default App
