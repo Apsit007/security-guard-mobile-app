@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./routes/Home";
 import AppLayout from "./Layouts/AppLayout";
-import IncidentList from "./routes/IncidentList";
+import IncidentMain from "./routes/Incident/IncidentMain";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <AppLayout />, // ✅ layout หลัก
     children: [
       { index: true, element: <Home /> },
-      { path: "incident", element: <IncidentList /> },
+      { path: "incident", element: <IncidentMain /> },
     ],
   },
 ]);
